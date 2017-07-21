@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i')
+
+*
+    box-sizing: border-box
+
+@media (max-width: 767px)
+    p
+        font-size: 0.9em
+
+/* For desktop and tv */
+@for $i from 1 through 12
+    .col-#{$i}
+        width: 8.33% * $i
+
+@for $i from 1 through 12
+    .col-offset-#{$i}
+        margin-left: 8.33% * $i
+
+/* For tablets and desktop: */
+@media (max-width: 1200px)
+    @for $i from 1 through 12
+        .col-m-#{$i}
+            width: 8.33% * $i
+
+/* For tablets and phones: */
+@media (max-width: 767px)
+    @for $i from 1 through 12
+        .col-s-#{$i}
+            width: 8.33% * $i
+
+@mixin clearfix
+    &:after
+        content: ""
+        display: table
+        clear: both
+
+.container
+    @include clearfix
+
+
+$primary-color: #313332
+
+$primary-font-color: #fff
+
+$hover-color: #06BFDD
+
+body
+    margin: 0
+    font-family: 'Open Sans', sans-serif
+
+p
+    color: $primary-font-color
+    font-weight: 300
+
+section img
+    width: 100%
+
+[class*="col"]
+    padding: 15px
+    float: left
+
+.container
+    max-width: 1200px
+    margin: 0 auto
+    width: 100%
+
+.row
+    overflow: auto
+
+/*=== HEADER ===*/
+
+nav
+    background-color: $primary-color
+    height: auto
+
+    img
+        padding: 10px 20px
+
+    ul
+        padding: 0
+        margin: 0
+        list-style-type: none
+        float: right
+
+    li
+        display: inline-block
+
+    a
+        text-decoration: none
+        line-height: 50px
+        padding: 0 15px
+        display: block
+        color: $primary-font-color
+        text-transform: uppercase
+        font-size: 0.9em
+
+@media (min-width: 768px)
+    nav
+        a
+            &:hover
+                color: $hover-color
+
+@media (max-width: 767px)
+    nav
+        text-align: center
+
+        ul
+            float: none
+
+        li
+            display: block
+
+        a
+            font-size: 0.8em
+
+/*=== SECTION HERO ===*/
+
+.hero-item
+    position: relative
+
+.slogan
+    padding: 0 20% 0 5%
+    background-color: rgba(0, 0, 0, 0.5)
+    top: 50%
+    right: 0
+    position: absolute
+    transform: translate(0, -50%)
+
+h1
+    font-weight: 400
+    color: $primary-font-color
+    font-size: 30px
+    text-transform: uppercase
+
+span
+    @expand h1
+    font-weight: 800
+
+.hero img
+    max-width: 100%
+
+@media (max-width: 767px)
+    h1
+        font-size: 1em
+
+/*=== SECTION ADVANTAGES ===*/
+
+.advantages-item
+    text-align: center
+    margin-top: 10%
+
+.addition-item
+    margin-bottom: 5%
+    text-align: center
+
+.advantages
+    p
+        color: #8F8F8F
+        line-height: 25px
+
+    i
+        color: $primary-font-color
+        background-color: $primary-color
+        border-radius: 10px
+        width: 80px
+        height: 80px
+        font-size: 50px
+        line-height: 80px
+
+    h4
+        color: $primary-color
+        font-weight: 800
+        font-size: 34px
+        text-transform: uppercase
+        margin-bottom: 0
+
+    h3
+        color: $primary-color
+        text-transform: uppercase
+        font-weight: bold
+        font-size: 20px
+        line-height: 5px
+        padding-top: 20px
+
+@media (min-width: 768px)
+    .advantages-item
+        &:hover i
+            background-color: $hover-color
+            cursor: pointer
+            transition: background-color 0.3s
+
+        &:hover h3
+            color: $hover-color
+            cursor: pointer
+            transition: background-color 0.3s
+
+        &:hover p
+            cursor: pointer
+
+@media (max-width: 767px)
+    .addition
+        h4
+            margin-top: 0
+            font-size: 1.5em
+
+/*=== SECTION GALLERY ===*/
+
+.collage
+    padding: 0
+    width: 100%
+
+.photo
+    padding: 0
+    margin-bottom: 0
+    position: relative
+    overflow: hidden
+
+    .icons
+        top: 50%
+        left: 50%
+        position: absolute
+        transform: translate(-50%, -50%)
+        transition: transform .3s
+
+    .layer
+        position: absolute
+        width: 100%
+        // text-align: center
+        background-color: rgba(0,0,0, 0.5)
+        height: 100%
+        opacity: 0
+        transform: translate(0, -50%)
+        transition: opacity .3s, transform .3s
+
+    &:hover .layer
+        opacity: 1
+        display: inline-block
+        cursor: pointer
+        transform: translate(0, 0)
+
+    i
+        background-color: $primary-font-color
+        border-radius: 20%
+        width: 30px
+        height: 30px
+        text-align: center
+        line-height: 30px
+
+section
+    img
+        display: block
+
+.fa-camera-retro
+    margin-right: 20px
+
+@media (max-width: 767px)
+    .collage
+        height: auto
+
+    .photo
+        display: block
+        padding: 0 5%
+
+        .layer
+            opacity: 1
+            background-color: inherit
+            // transform: translate(0, 50%)
+            top: 50%
+            left: 0
+            // line-height: 100%
+
+        &:hover .layer
+            transform: translate(0, -50%)
+
+/*=== SECTION TEAM ===*/
+
+.team-item
+    margin: 0 5%
+    margin-bottom: 10%
+    text-align: center
+    color: #5B5B59
+    margin-top: 50px
+
+    div
+        position: relative
+
+    img
+        border-radius: 50%
+        display: block
+
+    p
+        position: absolute
+        top: 50%
+        right: 50%
+        transform: translate(50%, -50%)
+        font-size: 1.00em
+        margin: 0
+
+    .layer
+        display: block
+        position: absolute
+        top: 0
+        width: 100%
+        height: 100%
+        background-color: rgba(0,0,0, 0.5)
+        border-radius: 50%
+        opacity: 0
+        transition: opacity .3s
+
+@media (min-width: 768px)
+    .team-item
+        &:hover .layer
+            cursor: pointer
+            color: $primary-font-color
+            opacity: 1
+
+/*=== SECTION PICTURE ===*/
+
+.picture
+    .col-12
+        background-image: url("http://pngimg.com/uploads/tablet/tablet_PNG8574.png")
+        background-repeat: no-repeat
+        background-color: #ccc
+        background-size: 600px
+        background-position: 50px 80px
+
+    h2
+        font-weight: 800
+        text-transform: uppercase
+        color: $primary-font-color
+        font-size: 30px
+        margin-top: 5%
+        text-align: left
+        margin-bottom: 0
+        padding-left: 15px
+
+.text-items
+    margin-left: 47%
+
+.picture-item-italic
+    font-style: italic
+
+@media (max-width: 767px)
+    .text-items
+        margin-left: 0
+
+    .picture h2
+        font-size: 1.5em
+
+    .picture
+        .col-12
+            background-image: none
+
+/*=== SECTION NUMBERS ===*/
+
+.numbers-item
+    text-align: center
+    margin-bottom: 20%
+
+    h4
+        font-weight: 800
+        text-transform: uppercase
+        color: $primary-color
+        font-size: 40px
+        margin-bottom: 0
+
+    h5
+        color: $hover-color
+        text-transform: uppercase
+        font-size: 18px
+        margin-top: 0
+
+.value-items
+    margin-left: 15%
+    margin-right: 15%
+
+@media (max-width: 768px)
+    .numbers-item
+        margin-top: 20%
+        h4
+            font-size: 1.4em
+            margin: 0
+        h5
+            font-size: 0.9em
+
+/*=== SECTION FOOTER ===*/
+
+.footer [class*="col"]
+    padding-bottom: 0
+
+.footer
+
+    i
+        background-color: #02C4E7
+        font-size: 18px
+        width: 35px
+        height: 35px
+        text-align: center
+        line-height: 35px
+    h3
+        color: #F2F4F3
+        font-size: 25px
+        text-transform: uppercase
+        overflow: hidden
+        margin: 0
+
+        &:after
+            background-color: $primary-font-color
+            content: ""
+            display: inline-block
+            height: 3px
+            position: relative
+            vertical-align: middle
+            width: 50%
+            left: 0.5em
+            margin-right: -50%
+
+    .row .row:nth-child(n+3) .col-3
+        padding-top: 0
+
+    .row .row:nth-child(n+3) .col-9
+        padding-top: 0
+
+    .col-3
+        p
+            font-weight: bold
+            margin-bottom: 0
+
+    .col-9
+        p
+            margin-bottom: 0
+
+.footer-item
+    padding-bottom: 10%
+
+.info
+    background-color: $primary-color
+    color: $primary-font-color
+
+@media (max-width: 767px)
+    .footer-item
+        text-align: center
+
+    .footer
+        h3
+            &:before
+                background-color: $primary-font-color
+                content: ""
+                display: inline-block
+                height: 3px
+                position: relative
+                vertical-align: middle
+                width: 50%
+                right: 0.5em
+                margin-left: -50%
+
+.copyrights
+    background-color: #252726
+    text-align: center
+    padding-top: 0
+    p
+        font-weight: 400
+        font-size: 14px
