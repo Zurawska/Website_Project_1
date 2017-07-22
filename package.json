@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Zurawska/project-kodilla/issues"
   },
-  "homepage": "https://github.com/Zurawska/project-kodilla#readme"
+  "homepage": "https://github.com/Zurawska/project-kodilla#readme",
+  "devDependencies": {
+    "grunt-sass": "^2.0.0"
+  }
 }
