@@ -2,20 +2,16 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-  	sass: {
-  		options: {
-  			sourceMap: true
-  		},
-        dist: {
-        files: [{
-           expand: true,
-           cwd: 'sass',
-           src: ['*.sass'],
-           dest: 'css',
-           ext: '.css'
-         }]
-        }
-  	},
+    sass: {
+		options: {
+			sourceMap: true
+		},
+		dist: {
+			files: {
+				'css/style.css': 'sass/style.sass'
+			}
+		}
+	},
 
   	imagemin: {
   		dynamic: {
